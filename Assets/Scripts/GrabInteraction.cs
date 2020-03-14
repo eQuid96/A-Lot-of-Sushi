@@ -3,9 +3,12 @@
 public class GrabInteraction : MonoBehaviour
 {
     public bool isGrabbing;
+    public Transform sushiAnchorPos;
     public Rigidbody _grabbedItem;
-    private Vector3 _camOffset = new Vector3(0.0f, 0.0f, 1.0f);
-
+    public Vector2 touchStartPos, touchEndPos, touchDirection;
+    float touchTimeStart, touchTimeFinish, timeInterval;
+    public float throwForceXY = 1.0f;
+    public float throwForceZ = 50.0f;
     void Update()
     {
         if (!isGrabbing)
@@ -21,11 +24,15 @@ public class GrabInteraction : MonoBehaviour
                         // Grab game object with tab Grab
                         if (hit.transform.CompareTag("Grab"))
                         {
-                            isGrabbing = true;
                             _grabbedItem = hit.rigidbody;
-                            hit.transform.position = Camera.main.transform.position + _camOffset;
+                            hit.transform.position = sushiAnchorPos.position;
+                            hit.transform.parent = sushiAnchorPos.parent;
                         }
                     }
+                }
+                if (Input.GetTouch(0).phase == TouchPhase.Ended && _grabbedItem)
+                {
+                    isGrabbing = true;
                 }
             }
         }
@@ -37,9 +44,22 @@ public class GrabInteraction : MonoBehaviour
                 {
                     if (isRightSide(Input.GetTouch(i).position))
                     {
-                        if (Input.GetTouch(i).phase == TouchPhase.Moved)
+                        if (Input.GetTouch(i).phase == TouchPhase.Began)
                         {
-                            /* TO DO THROW SUSHI */
+                            touchTimeStart = Time.time;
+                            touchStartPos = Input.GetTouch(i).position;
+                        }
+                        if (Input.GetTouch(i).phase == TouchPhase.Ended)
+                        {
+                            touchTimeFinish = Time.time;
+                            timeInterval = touchTimeFinish - touchTimeStart;
+                            touchEndPos = Input.GetTouch(i).position;
+                            touchDirection = touchStartPos - touchEndPos;
+                            _grabbedItem.transform.parent = null;
+                            _grabbedItem.isKinematic = false;
+                            _grabbedItem.AddForce(-touchDirection.x * throwForceXY, -touchDirection.y * throwForceXY, throwForceZ / timeInterval);
+                            isGrabbing = false;
+                            _grabbedItem = null;
                         }
                     }
                 }
