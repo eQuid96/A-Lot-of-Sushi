@@ -7,7 +7,7 @@ public class GrabInteraction : MonoBehaviour
     public Transform bacchette;
     private ThrowableObject _grabbedItem;
     public float throwForce;
-    private const float MIN_THROW_FORCE = 2.0f, MAX_THROW_FORCE = 6.0F, THROW_CHARGE_SPEED = 3.0f;
+    private const float MIN_THROW_FORCE = 1.0f, MAX_THROW_FORCE = 10.0f, THROW_CHARGE_SPEED = 10.0f;
     public GameObject throwBar;
     public Image throwSlider;
     private bool isDecreasing;
