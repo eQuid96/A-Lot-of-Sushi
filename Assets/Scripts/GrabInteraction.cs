@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class GrabInteraction : MonoBehaviour
 {
     public bool isGrabbing;
     public Transform sushiAnchorPos;
     public Transform bacchette;
-    private Rigidbody _grabbedItem;
-    private Vector2 touchStartPos, touchEndPos, touchDirection;
-    private float touchTimeStart, touchTimeFinish, timeInterval;
-    private float throwForceXY = 1.0f;
-    private float throwForceZ = 30.0f;
-    private const float MIN_TIME_SWIPE = 0.1f; // Swipe timer controll
-    private Vector3 _camOffset = new Vector3(0.0f, 0.0f, 1.0f);
+    private ThrowableObject _grabbedItem;
+    public float throwForce;
+    private const float MIN_THROW_FORCE = 2.0f, MAX_THROW_FORCE = 6.0F, THROW_CHARGE_SPEED = 3.0f;
+    public GameObject throwBar;
+    public Image throwSlider;
+    private bool isDecreasing;
+    private void Start()
+    {
+        RestThrowBar();
+    }
+
     void Update()
     {
         if (!isGrabbing)
@@ -28,33 +32,40 @@ public class GrabInteraction : MonoBehaviour
                     {
                         if (Input.GetTouch(i).phase == TouchPhase.Began)
                         {
-                            touchTimeStart = Time.time;
-                            touchStartPos = Input.GetTouch(i).position;
+                            throwBar.SetActive(true);
                         }
 
                         if (Input.GetTouch(i).phase == TouchPhase.Stationary)
                         {
-                            Debug.DrawRay(sushiAnchorPos.position, sushiAnchorPos.forward * 10.0f, Color.red);
+                            if (throwForce >= MAX_THROW_FORCE)
+                            {
+                                isDecreasing = true;
+                            }
+
+                            if (throwForce <= MIN_THROW_FORCE)
+                            {
+                                isDecreasing = false;
+                            }
+
+                            if (isDecreasing)
+                            {
+                                throwForce -= Time.deltaTime * THROW_CHARGE_SPEED;
+                            }
+                            else
+                            {
+                                throwForce += Time.deltaTime * THROW_CHARGE_SPEED;
+                            }
+
+                            throwSlider.fillAmount = (throwForce - MIN_THROW_FORCE) / (MAX_THROW_FORCE - MIN_THROW_FORCE);
                         }
 
                         if (Input.GetTouch(i).phase == TouchPhase.Ended)
                         {
-                            touchTimeFinish = Time.time;
-                            timeInterval = touchTimeFinish - touchTimeStart;
-
-                            // Fast swipe is not allowed
-                            if (timeInterval <= MIN_TIME_SWIPE)
-                            {
-                                return;
-                            }
-
-                            touchEndPos = Input.GetTouch(i).position;
-                            touchDirection = touchStartPos - touchEndPos;
-                            _grabbedItem.transform.parent = null;
-                            _grabbedItem.isKinematic = false;
-                            _grabbedItem.AddForce(-touchDirection.x * throwForceXY, -touchDirection.y * throwForceXY, throwForceZ / timeInterval);
+                            Debug.Log(throwForce);
+                            _grabbedItem.Throw(throwForce);
                             _grabbedItem = null;
                             isGrabbing = false;
+                            RestThrowBar();
                         }
                     }
                 }
@@ -62,6 +73,13 @@ public class GrabInteraction : MonoBehaviour
         }
     }
 
+
+    private void RestThrowBar()
+    {
+        throwSlider.fillAmount = 0.0f;
+        throwForce = MIN_THROW_FORCE;
+        throwBar.SetActive(false);
+    }
     private void Grab()
     {
         if (Input.touchCount > 0)
@@ -78,7 +96,7 @@ public class GrabInteraction : MonoBehaviour
                         // Grab game object with tab Grab
                         if (hit.transform.CompareTag("Grab"))
                         {
-                            _grabbedItem = hit.rigidbody;
+                            _grabbedItem = hit.transform.GetComponent<ThrowableObject>();
                             hit.transform.position = sushiAnchorPos.position;
                             hit.transform.parent = sushiAnchorPos.parent;
                         }
