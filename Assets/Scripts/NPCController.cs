@@ -15,9 +15,10 @@ public class NPCController : MonoBehaviour
     private Transform Player;
 
     private Animator anim;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     private GameObject cone;
     private Color originalConeColor;
+    public GameObject flame1, flame2;
 
     //TRIGGERED EVENT
     private bool _triggered;
@@ -29,6 +30,8 @@ public class NPCController : MonoBehaviour
             _triggered = value;
             if (value) {
                 cone.GetComponent<Renderer>().material.SetColor("_Color0", Color.red);
+                flame1.GetComponent<Renderer>().material.SetColor("_Color0", Color.red);
+                flame2.GetComponent<Renderer>().material.SetColor("_Color0", Color.red);
                 alert.Play();
                 gasp.Play();
                 agent.acceleration = 100f;
@@ -39,6 +42,8 @@ public class NPCController : MonoBehaviour
                 agent.speed = agentSpeed;
                 agent.updateRotation = true;
                 cone.GetComponent<Renderer>().material.SetColor("_Color0", originalConeColor);
+                flame1.GetComponent<Renderer>().material.SetColor("_Color0", originalConeColor);
+                flame2.GetComponent<Renderer>().material.SetColor("_Color0", originalConeColor);
             }
         }
     }

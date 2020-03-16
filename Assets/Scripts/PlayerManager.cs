@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     public Text timer_txt;
     public GameObject pause_btn, pauseMenu;
     public GameObject[] lifesImg = new GameObject[MAX_PLAYER_LIFE];
+    public GameObject win, loss;
+    public NPCController waitress;
 
     // EVENTS
     public delegate void GameOver();
@@ -54,6 +56,9 @@ public class PlayerManager : MonoBehaviour
             {
                 isTimeOver = true;
                 gameTimer = 0;
+                win.SetActive(true);
+                waitress.agent.isStopped = true;
+                waitress.transform.Find("OMEDETO").GetComponent<AudioSource>().Play();
             }
 
             gameTimer -= Time.deltaTime;
@@ -67,7 +72,9 @@ public class PlayerManager : MonoBehaviour
         if (tmpLife <= 0 && !isGameOver)
         {
             isGameOver = true;
-            onGameOver?.Invoke(); // SEND GAME OVER EVENT
+            loss.SetActive(true);
+            waitress.agent.isStopped = true;
+            waitress.transform.Find("DISGRACERU").GetComponent<AudioSource>().Play();
             life = 0;
             lifesImg[0].SetActive(false);
             return;
