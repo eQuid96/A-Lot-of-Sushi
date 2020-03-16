@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -919,7 +919,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 883660178}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &543956677
 BoxCollider:
@@ -1195,6 +1195,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609050886}
   m_Mesh: {fileID: 4465092862397651460, guid: ce66ac728b929654d813b40583329df8, type: 3}
+--- !u!1 &652167534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652167535}
+  - component: {fileID: 652167536}
+  m_Layer: 0
+  m_Name: Table (1)
+  m_TagString: Table
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &652167535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652167534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.013, y: 0.799, z: -0.482}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883660178}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &652167536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652167534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.03, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,9 +1848,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2114497623}
-  - {fileID: 1299066462}
   - {fileID: 543956676}
+  - {fileID: 1168094224}
+  - {fileID: 652167535}
+  - {fileID: 1245382067}
+  - {fileID: 1997269552}
+  - {fileID: 1996814017}
+  - {fileID: 1353665964}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2342,6 +2390,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1130158643}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1168094223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168094224}
+  - component: {fileID: 1168094225}
+  m_Layer: 0
+  m_Name: Table
+  m_TagString: Table
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168094224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168094223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.934, y: 0.799, z: -0.524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883660178}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1168094225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168094223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.03, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1245382066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1245382067}
+  - component: {fileID: 1245382068}
+  m_Layer: 0
+  m_Name: Table (2)
+  m_TagString: Table
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1245382067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245382066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.013, y: 0.799, z: 2.876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883660178}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1245382068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245382066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.03, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1272352698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2432,50 +2568,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1272352698}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1299066461
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1299066462}
-  - component: {fileID: 1299066463}
-  m_Layer: 0
-  m_Name: Table (1)
-  m_TagString: Table
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1299066462
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299066461}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.651, y: -1.57, z: 0.27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 883660178}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1299066463
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299066461}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.2, y: 0.06, z: 1.2732375}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1320931245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2639,6 +2731,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330688502}
   m_CullTransparentMesh: 0
+--- !u!1 &1353665963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1353665964}
+  - component: {fileID: 1353665965}
+  m_Layer: 0
+  m_Name: Table (5)
+  m_TagString: Table
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1353665964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353665963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.021, y: 0.815, z: 6.141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883660178}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1353665965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353665963}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.03, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1386371220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 553013526305450872, guid: c6242610199b194439b57dc3428a0105,
@@ -4029,6 +4165,94 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977595893}
   m_Mesh: {fileID: 4465092862397651460, guid: ce66ac728b929654d813b40583329df8, type: 3}
+--- !u!1 &1996814016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1996814017}
+  - component: {fileID: 1996814018}
+  m_Layer: 0
+  m_Name: Table (4)
+  m_TagString: Table
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1996814017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996814016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.17, y: 0.799, z: 6.311}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883660178}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1996814018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996814016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.03, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1997269551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1997269552}
+  - component: {fileID: 1997269553}
+  m_Layer: 0
+  m_Name: Table (3)
+  m_TagString: Table
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1997269552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997269551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.203, y: 0.799, z: 3.322}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 883660178}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1997269553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997269551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.03, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2003524478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4538,50 +4762,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6578274047133074454}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2114497622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2114497623}
-  - component: {fileID: 2114497624}
-  m_Layer: 0
-  m_Name: Table
-  m_TagString: Table
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2114497623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114497622}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7, y: -1.6, z: 0.27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 883660178}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2114497624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114497622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3620777, y: 0.1, z: 1.2732375}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &38897726629012269
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6254,13 +6434,28 @@ GameObject:
   - component: {fileID: 6611615008430429390}
   - component: {fileID: 6611615008430429384}
   - component: {fileID: 6611615008430429385}
+  - component: {fileID: 6611615008430429392}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008430429392
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008430429391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615008434740092
 Transform:
   m_ObjectHideFlags: 0
@@ -6380,9 +6575,10 @@ GameObject:
   - component: {fileID: 6611615008434763368}
   - component: {fileID: 6611615008434763370}
   - component: {fileID: 6611615008434763371}
+  - component: {fileID: 6611615008434763372}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -6434,6 +6630,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615008434763372
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008434763369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615008440098156
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6671,13 +6881,28 @@ GameObject:
   - component: {fileID: 6611615008475125039}
   - component: {fileID: 6611615008475125033}
   - component: {fileID: 6611615008475125038}
+  - component: {fileID: 6611615008475125037}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008475125037
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008475125036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615008475125038
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7634,28 +7859,13 @@ GameObject:
   - component: {fileID: 6611615008525873547}
   - component: {fileID: 6611615008525873541}
   - component: {fileID: 6611615008525873546}
-  - component: {fileID: 6611615008525873545}
   m_Layer: 0
   m_Name: ciotola (1)
-  m_TagString: Ciotola
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!64 &6611615008525873545
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6611615008525873544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3556763555153298628, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615008525873546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7972,9 +8182,10 @@ GameObject:
   - component: {fileID: 6611615008561242248}
   - component: {fileID: 6611615008561242250}
   - component: {fileID: 6611615008561242251}
+  - component: {fileID: 6611615008561242252}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -8026,6 +8237,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615008561242252
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008561242249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615008562492104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8684,13 +8909,28 @@ GameObject:
   - component: {fileID: 6611615008584897515}
   - component: {fileID: 6611615008584897509}
   - component: {fileID: 6611615008584897514}
+  - component: {fileID: 6611615008584897513}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008584897513
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008584897512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615008584897514
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9178,13 +9418,28 @@ GameObject:
   - component: {fileID: 6611615008604457293}
   - component: {fileID: 6611615008604457295}
   - component: {fileID: 6611615008604457292}
+  - component: {fileID: 6611615008604457299}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008604457299
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008604457298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615008614080312
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9793,10 +10048,9 @@ GameObject:
   - component: {fileID: 6611615008668516320}
   - component: {fileID: 6611615008668516322}
   - component: {fileID: 6611615008668516323}
-  - component: {fileID: 6611615008668516324}
   m_Layer: 0
   m_Name: tagliere (1)
-  m_TagString: Tagliere
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9848,20 +10102,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6611615008668516324
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6611615008668516321}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6532633865830520636, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615008676930144
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10596,13 +10836,28 @@ GameObject:
   - component: {fileID: 6611615008721923321}
   - component: {fileID: 6611615008721923323}
   - component: {fileID: 6611615008721923320}
+  - component: {fileID: 6611615008721923327}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008721923327
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008721923326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615008722419172
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11732,13 +11987,28 @@ GameObject:
   - component: {fileID: 6611615008822568558}
   - component: {fileID: 6611615008822568552}
   - component: {fileID: 6611615008822568553}
+  - component: {fileID: 6611615008822568560}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008822568560
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008822568559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615008827682688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12315,13 +12585,28 @@ GameObject:
   - component: {fileID: 6611615008860634966}
   - component: {fileID: 6611615008860634960}
   - component: {fileID: 6611615008860634961}
+  - component: {fileID: 6611615008860634968}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008860634968
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008860634967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615008861263360
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13738,9 +14023,10 @@ GameObject:
   - component: {fileID: 6611615008930810512}
   - component: {fileID: 6611615008930810514}
   - component: {fileID: 6611615008930810515}
+  - component: {fileID: 6611615008930810516}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -13792,6 +14078,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615008930810516
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008930810513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615008956837792
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14054,9 +14354,10 @@ GameObject:
   - component: {fileID: 6611615008974647836}
   - component: {fileID: 6611615008974647838}
   - component: {fileID: 6611615008974647839}
+  - component: {fileID: 6611615008974647840}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -14108,6 +14409,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615008974647840
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008974647837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615008975908380
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14420,13 +14735,28 @@ GameObject:
   - component: {fileID: 6611615008990526515}
   - component: {fileID: 6611615008990526509}
   - component: {fileID: 6611615008990526514}
+  - component: {fileID: 6611615008990526513}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615008990526513
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615008990526512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615008990526514
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15218,9 +15548,10 @@ GameObject:
   - component: {fileID: 6611615009028367716}
   - component: {fileID: 6611615009028367718}
   - component: {fileID: 6611615009028367719}
+  - component: {fileID: 6611615009028367720}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -15272,6 +15603,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009028367720
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009028367717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009032605484
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15552,13 +15897,28 @@ GameObject:
   - component: {fileID: 6611615009037428121}
   - component: {fileID: 6611615009037428123}
   - component: {fileID: 6611615009037428120}
+  - component: {fileID: 6611615009037428127}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009037428127
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009037428126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009040277764
 Transform:
   m_ObjectHideFlags: 0
@@ -16555,13 +16915,28 @@ GameObject:
   - component: {fileID: 6611615009101504899}
   - component: {fileID: 6611615009101505149}
   - component: {fileID: 6611615009101504898}
+  - component: {fileID: 6611615009101504897}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009101504897
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009101504896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009101504898
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17217,10 +17592,9 @@ GameObject:
   - component: {fileID: 6611615009132595972}
   - component: {fileID: 6611615009132595974}
   - component: {fileID: 6611615009132595975}
-  - component: {fileID: 6611615009132595976}
   m_Layer: 0
   m_Name: tagliere (2)
-  m_TagString: Tagliere
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17272,20 +17646,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6611615009132595976
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6611615009132595973}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6532633865830520636, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009137347540
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17358,13 +17718,28 @@ GameObject:
   - component: {fileID: 6611615009137347546}
   - component: {fileID: 6611615009137347540}
   - component: {fileID: 6611615009137347541}
+  - component: {fileID: 6611615009137347548}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009137347548
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009137347547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009147340740
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17627,9 +18002,10 @@ GameObject:
   - component: {fileID: 6611615009155435000}
   - component: {fileID: 6611615009155435002}
   - component: {fileID: 6611615009155435003}
+  - component: {fileID: 6611615009155435004}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17681,6 +18057,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009155435004
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009155435001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009172988458
 Transform:
   m_ObjectHideFlags: 0
@@ -18199,13 +18589,28 @@ GameObject:
   - component: {fileID: 6611615009229534867}
   - component: {fileID: 6611615009229534861}
   - component: {fileID: 6611615009229534866}
+  - component: {fileID: 6611615009229534865}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009229534865
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009229534864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009229534866
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18442,13 +18847,28 @@ GameObject:
   - component: {fileID: 6611615009232347138}
   - component: {fileID: 6611615009232347388}
   - component: {fileID: 6611615009232347389}
+  - component: {fileID: 6611615009232347140}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009232347140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009232347139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009232347388
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18515,13 +18935,28 @@ GameObject:
   - component: {fileID: 6611615009235773391}
   - component: {fileID: 6611615009235773385}
   - component: {fileID: 6611615009235773390}
+  - component: {fileID: 6611615009235773389}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009235773389
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009235773388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009235773390
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18647,13 +19082,28 @@ GameObject:
   - component: {fileID: 6611615009241291729}
   - component: {fileID: 6611615009241291731}
   - component: {fileID: 6611615009241291728}
+  - component: {fileID: 6611615009241291735}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009241291735
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009241291734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009243783017
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18673,13 +19123,28 @@ GameObject:
   - component: {fileID: 6611615009243783023}
   - component: {fileID: 6611615009243783017}
   - component: {fileID: 6611615009243783022}
+  - component: {fileID: 6611615009243783021}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009243783021
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009243783020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009243783022
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18805,13 +19270,28 @@ GameObject:
   - component: {fileID: 6611615009245867822}
   - component: {fileID: 6611615009245867816}
   - component: {fileID: 6611615009245867817}
+  - component: {fileID: 6611615009245867824}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009245867824
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009245867823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009246032888
 Transform:
   m_ObjectHideFlags: 0
@@ -18837,9 +19317,10 @@ GameObject:
   - component: {fileID: 6611615009246032888}
   - component: {fileID: 6611615009246032890}
   - component: {fileID: 6611615009246032891}
+  - component: {fileID: 6611615009246032892}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -18891,6 +19372,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009246032892
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009246032889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009246188501
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19119,9 +19614,10 @@ GameObject:
   - component: {fileID: 6611615009252997684}
   - component: {fileID: 6611615009252997686}
   - component: {fileID: 6611615009252997687}
+  - component: {fileID: 6611615009252997688}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -19173,6 +19669,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009252997688
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009252997685}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009260517388
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19271,28 +19781,13 @@ GameObject:
   - component: {fileID: 6611615009266504351}
   - component: {fileID: 6611615009266504345}
   - component: {fileID: 6611615009266504350}
-  - component: {fileID: 6611615009266504349}
   m_Layer: 0
   m_Name: ciotola (2)
-  m_TagString: Ciotola
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!64 &6611615009266504349
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6611615009266504348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3556763555153298628, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009266504350
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19497,13 +19992,28 @@ GameObject:
   - component: {fileID: 6611615009268905201}
   - component: {fileID: 6611615009268905203}
   - component: {fileID: 6611615009268905200}
+  - component: {fileID: 6611615009268905207}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009268905207
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009268905206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009270028920
 Transform:
   m_ObjectHideFlags: 0
@@ -19586,13 +20096,28 @@ GameObject:
   - component: {fileID: 6611615009277731743}
   - component: {fileID: 6611615009277731737}
   - component: {fileID: 6611615009277731742}
+  - component: {fileID: 6611615009277731741}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009277731741
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009277731740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009277731742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21385,13 +21910,28 @@ GameObject:
   - component: {fileID: 6611615009401924766}
   - component: {fileID: 6611615009401924760}
   - component: {fileID: 6611615009401924761}
+  - component: {fileID: 6611615009401924768}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009401924768
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009401924767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009407339628
 Transform:
   m_ObjectHideFlags: 0
@@ -22506,9 +23046,10 @@ GameObject:
   - component: {fileID: 6611615009452477888}
   - component: {fileID: 6611615009452477890}
   - component: {fileID: 6611615009452477891}
+  - component: {fileID: 6611615009452477892}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -22560,6 +23101,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009452477892
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009452477889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009454109725
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22963,13 +23518,28 @@ GameObject:
   - component: {fileID: 6611615009463883361}
   - component: {fileID: 6611615009463883363}
   - component: {fileID: 6611615009463883360}
+  - component: {fileID: 6611615009463883367}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009463883367
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009463883366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009465268508
 Transform:
   m_ObjectHideFlags: 0
@@ -24240,13 +24810,28 @@ GameObject:
   - component: {fileID: 6611615009542812097}
   - component: {fileID: 6611615009542812099}
   - component: {fileID: 6611615009542812096}
+  - component: {fileID: 6611615009542812103}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009542812103
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009542812102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009543054132
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24319,13 +24904,28 @@ GameObject:
   - component: {fileID: 6611615009543054138}
   - component: {fileID: 6611615009543054132}
   - component: {fileID: 6611615009543054133}
+  - component: {fileID: 6611615009543054140}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009543054140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009543054139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009543251168
 Transform:
   m_ObjectHideFlags: 0
@@ -24977,13 +25577,28 @@ GameObject:
   - component: {fileID: 6611615009599762663}
   - component: {fileID: 6611615009599762657}
   - component: {fileID: 6611615009599762662}
+  - component: {fileID: 6611615009599762661}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009599762661
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009599762660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615009599762662
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25203,13 +25818,28 @@ GameObject:
   - component: {fileID: 6611615009612866309}
   - component: {fileID: 6611615009612866311}
   - component: {fileID: 6611615009612866308}
+  - component: {fileID: 6611615009612866315}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009612866315
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009612866314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009614098908
 Transform:
   m_ObjectHideFlags: 0
@@ -25455,9 +26085,10 @@ GameObject:
   - component: {fileID: 6611615009623068820}
   - component: {fileID: 6611615009623068822}
   - component: {fileID: 6611615009623068823}
+  - component: {fileID: 6611615009623068824}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -25509,6 +26140,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009623068824
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009623068821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009633928753
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27260,9 +27905,10 @@ GameObject:
   - component: {fileID: 6611615009726355736}
   - component: {fileID: 6611615009726355738}
   - component: {fileID: 6611615009726355739}
+  - component: {fileID: 6611615009726355740}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -27314,6 +27960,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009726355740
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009726355737}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009736108448
 Transform:
   m_ObjectHideFlags: 0
@@ -28223,13 +28883,28 @@ GameObject:
   - component: {fileID: 6611615009799041437}
   - component: {fileID: 6611615009799041439}
   - component: {fileID: 6611615009799041436}
+  - component: {fileID: 6611615009799041443}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009799041443
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009799041442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009802135125
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28791,13 +29466,28 @@ GameObject:
   - component: {fileID: 6611615009827575686}
   - component: {fileID: 6611615009827575680}
   - component: {fileID: 6611615009827575681}
+  - component: {fileID: 6611615009827575688}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009827575688
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009827575687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009829512468
 Transform:
   m_ObjectHideFlags: 0
@@ -29028,13 +29718,28 @@ GameObject:
   - component: {fileID: 6611615009831010370}
   - component: {fileID: 6611615009831010364}
   - component: {fileID: 6611615009831010365}
+  - component: {fileID: 6611615009831010372}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009831010372
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009831010371}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615009833040477
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -31110,13 +31815,28 @@ GameObject:
   - component: {fileID: 6611615009938676466}
   - component: {fileID: 6611615009938676460}
   - component: {fileID: 6611615009938676461}
+  - component: {fileID: 6611615009938676468}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615009938676468
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009938676467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009943577896
 Transform:
   m_ObjectHideFlags: 0
@@ -31221,9 +31941,10 @@ GameObject:
   - component: {fileID: 6611615009948465104}
   - component: {fileID: 6611615009948465106}
   - component: {fileID: 6611615009948465107}
+  - component: {fileID: 6611615009948465108}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -31275,6 +31996,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615009948465108
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615009948465105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615009948473368
 Transform:
   m_ObjectHideFlags: 0
@@ -32788,13 +33523,28 @@ GameObject:
   - component: {fileID: 6611615010024164507}
   - component: {fileID: 6611615010024164501}
   - component: {fileID: 6611615010024164506}
+  - component: {fileID: 6611615010024164505}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615010024164505
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010024164504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615010024164506
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32982,9 +33732,10 @@ GameObject:
   - component: {fileID: 6611615010034138168}
   - component: {fileID: 6611615010034138170}
   - component: {fileID: 6611615010034138171}
+  - component: {fileID: 6611615010034138172}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -33036,6 +33787,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615010034138172
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010034138169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615010035578149
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33299,9 +34064,10 @@ GameObject:
   - component: {fileID: 6611615010066801692}
   - component: {fileID: 6611615010066801694}
   - component: {fileID: 6611615010066801695}
+  - component: {fileID: 6611615010066801696}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -33353,6 +34119,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615010066801696
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010066801693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615010067799652
 Transform:
   m_ObjectHideFlags: 0
@@ -35138,13 +35918,28 @@ GameObject:
   - component: {fileID: 6611615010166683435}
   - component: {fileID: 6611615010166683429}
   - component: {fileID: 6611615010166683434}
+  - component: {fileID: 6611615010166683433}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615010166683433
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010166683432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615010166683434
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36135,13 +36930,28 @@ GameObject:
   - component: {fileID: 6611615010210052897}
   - component: {fileID: 6611615010210052899}
   - component: {fileID: 6611615010210052896}
+  - component: {fileID: 6611615010210052903}
   m_Layer: 0
   m_Name: Piattino_da_soia (1)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615010210052903
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010210052902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615010218156916
 Transform:
   m_ObjectHideFlags: 0
@@ -36167,9 +36977,10 @@ GameObject:
   - component: {fileID: 6611615010218156916}
   - component: {fileID: 6611615010218156918}
   - component: {fileID: 6611615010218156919}
+  - component: {fileID: 6611615010218156920}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -36221,6 +37032,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615010218156920
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010218156917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615010222483002
 Transform:
   m_ObjectHideFlags: 0
@@ -36355,9 +37180,10 @@ GameObject:
   - component: {fileID: 6611615010234641624}
   - component: {fileID: 6611615010234641626}
   - component: {fileID: 6611615010234641627}
+  - component: {fileID: 6611615010234641628}
   m_Layer: 0
   m_Name: PiattoLongo (1)
-  m_TagString: Untagged
+  m_TagString: Ciotola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -36409,6 +37235,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615010234641628
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010234641625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8257429518185887609, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615010240274740
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -36994,9 +37834,10 @@ GameObject:
   - component: {fileID: 6611615010271157796}
   - component: {fileID: 6611615010271157798}
   - component: {fileID: 6611615010271157799}
+  - component: {fileID: 6611615010271157800}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -37048,6 +37889,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6611615010271157800
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010271157797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615010276679280
 Transform:
   m_ObjectHideFlags: 0
@@ -37199,13 +38054,28 @@ GameObject:
   - component: {fileID: 6611615010278838014}
   - component: {fileID: 6611615010278838008}
   - component: {fileID: 6611615010278838009}
+  - component: {fileID: 6611615010278838016}
   m_Layer: 0
   m_Name: Piattino_da_soia (3)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615010278838016
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010278838015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!4 &6611615010287641920
 Transform:
   m_ObjectHideFlags: 0
@@ -37402,13 +38272,28 @@ GameObject:
   - component: {fileID: 6611615010295372181}
   - component: {fileID: 6611615010295372183}
   - component: {fileID: 6611615010295372180}
+  - component: {fileID: 6611615010295372187}
   m_Layer: 0
   m_Name: Piattino_da_soia
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615010295372187
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010295372186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!33 &6611615010296905137
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39450,13 +40335,28 @@ GameObject:
   - component: {fileID: 6611615010440751687}
   - component: {fileID: 6611615010440751681}
   - component: {fileID: 6611615010440751686}
+  - component: {fileID: 6611615010440751685}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615010440751685
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010440751684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615010440751686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40112,13 +41012,28 @@ GameObject:
   - component: {fileID: 6611615010514431719}
   - component: {fileID: 6611615010514431713}
   - component: {fileID: 6611615010514431718}
+  - component: {fileID: 6611615010514431717}
   m_Layer: 0
   m_Name: Piattino_da_soia (2)
-  m_TagString: Untagged
+  m_TagString: Tagliere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!64 &6611615010514431717
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6611615010514431716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6667138718436772627, guid: ce66ac728b929654d813b40583329df8, type: 3}
 --- !u!23 &6611615010514431718
 MeshRenderer:
   m_ObjectHideFlags: 0

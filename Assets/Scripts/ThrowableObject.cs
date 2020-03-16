@@ -7,7 +7,7 @@ public class ThrowableObject : MonoBehaviour
     public bool isThrowing;
     private bool hasCollide;
     private float timer = 0.0f;
-    private const float MIN_TIME_ON_COLLISION = 0.5f;
+    private const float MIN_TIME_ON_COLLISION = 0.3f;
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Transform startParent;
