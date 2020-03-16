@@ -73,16 +73,15 @@ public class ThrowableObject : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if(collision.gameObject.name == "Waiter"){
+        if(collision.transform.CompareTag("Waiter")){
             Detected();
-        }else if (collision.gameObject.name == "Dish"){
+        }else if (collision.transform.CompareTag("Tagliere")){
             dishSound.Play();
         }
     }
     
     private void OnTriggerEnter(Collider triggered) {
-        Debug.Log(triggered.gameObject.name);
-        if (triggered.gameObject.name == "cone"){
+        if (triggered.transform.CompareTag("Cone")){
             Detected();
         }
     }
@@ -91,7 +90,7 @@ public class ThrowableObject : MonoBehaviour
         Vector3 augmented = startPosition;
         augmented.y = augmented.y + 2f;
         gameObject.transform.position = augmented;
-        // ui.Detected();  
+        PlayerManager.instance.RemoveLife();
         NPC.Triggered = true;
     }
 

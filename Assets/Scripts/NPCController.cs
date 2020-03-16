@@ -51,12 +51,11 @@ public class NPCController : MonoBehaviour
     
 
     private void Awake() {
-        // anim = GetComponent<Animator>();    
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         if (agent != null) agentSpeed = agent.speed;
         acceleration = agent.acceleration;
         // player = GameObject.FindGameObjectWithTag("Player").transform;
-
         InvokeRepeating("Tick", 0, 0.5f);
 
         if (waypoints.Length > 0) {
@@ -82,7 +81,15 @@ public class NPCController : MonoBehaviour
                 agent.isStopped = true;
                 StartCoroutine(_wait(5));
             }
-        }    
+        }
+        if (agent.remainingDistance <= 0.2f)
+        {
+            anim.SetBool("isMoving", false);
+        }
+        else
+        {
+            anim.SetBool("isMoving", true);
+        }
     }
 
     void Patrol() {

@@ -9,6 +9,8 @@ TagManager:
   - Client
   - Tagliere
   - Ciotola
+  - Waiter
+  - Cone
   layers:
   - Default
   - TransparentFX
