@@ -88,7 +88,7 @@ public class ThrowableObject : MonoBehaviour
 
     private void Detected(){
         Vector3 augmented = startPosition;
-        augmented.y = augmented.y + 2f;
+        augmented.y = augmented.y + 0.2f;
         gameObject.transform.position = augmented;
         PlayerManager.instance.RemoveLife();
         NPC.Triggered = true;
