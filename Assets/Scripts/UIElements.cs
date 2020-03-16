@@ -11,6 +11,8 @@ public class UIElements : MonoBehaviour
     private GameObject main;
     private GameObject overlay;
 
+    public int lifes = 3;
+
     void Start(){
         settings = transform.Find("SettingsMenu").gameObject;
         main = transform.Find("MainMenu").gameObject;
@@ -19,12 +21,15 @@ public class UIElements : MonoBehaviour
  
 
     void Update(){
-        
+        if (lifes < 1) {
+            Debug.Log("GAMEOVER");
+        }
     }
 
     public void LoadScene(string name) {
         main.gameObject.SetActive(false);
         overlay.gameObject.SetActive(true);
+        lifes = 3;
         DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene(name);
     }
@@ -48,6 +53,15 @@ public class UIElements : MonoBehaviour
 
     public void TuneVolume(string name, float volume) {
 
+    }
+
+    public void Detected(){
+        lifes -= 1;
+        if (lifes > 0) {
+            overlay.transform.Find("Lifes").GetComponent<TextMeshProUGUI>().text = lifes.ToString();
+        } else {
+            // GAMEOVER
+        }
     }
 
 }

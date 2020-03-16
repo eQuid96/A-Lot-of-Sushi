@@ -6,28 +6,83 @@ using UnityEngine.AI;
 public class NPCController : MonoBehaviour
 {
     public float patrolTime = 2f;
-    public float aggroRange = 10f;
     public Transform[] waypoints;
 
-    private int index;
-    private float speed, agentSpeed;
-    private Transform player;
+    private int index = 0;
+    private float speed, agentSpeed, acceleration;
+    
+    [SerializeField]
+    private Transform Player;
 
     private Animator anim;
     private NavMeshAgent agent;
+    private GameObject cone;
+    private Color originalConeColor;
+
+    //TRIGGERED EVENT
+    private bool _triggered;
+    public bool Triggered {
+        get {
+            return _triggered;
+        }
+        set {
+            _triggered = value;
+            if (value) {
+                cone.GetComponent<Renderer>().material.SetColor("_Color0", Color.red);
+                alert.Play();
+                gasp.Play();
+                agent.acceleration = 100f;
+                agent.speed = 100f;
+                agent.updateRotation = false;
+            } else {
+                agent.acceleration = acceleration;
+                agent.speed = agentSpeed;
+                agent.updateRotation = true;
+                cone.GetComponent<Renderer>().material.SetColor("_Color0", originalConeColor);
+            }
+        }
+    }
+    [SerializeField]
+    private GameObject waypointTriggered;
+    [SerializeField]
+    private GameObject crowd;
+    private AudioSource gasp;
+    private ParticleSystem alert;
+    
 
     private void Awake() {
         // anim = GetComponent<Animator>();    
         agent = GetComponent<NavMeshAgent>();
         if (agent != null) agentSpeed = agent.speed;
-        player = null;// GameObject.FindGameObjectWithTag("Player").transform;
-        index = Random.Range(0, waypoints.Length);
+        acceleration = agent.acceleration;
+        // player = GameObject.FindGameObjectWithTag("Player").transform;
 
         InvokeRepeating("Tick", 0, 0.5f);
 
         if (waypoints.Length > 0) {
             InvokeRepeating("Patrol", 0, patrolTime);
         }
+
+        cone = gameObject.transform.Find("cone").gameObject;
+        originalConeColor = cone.GetComponent<Renderer>().material.GetColor("_Color0");
+
+        gasp = crowd.transform.Find("Gasp").GetComponent<AudioSource>();
+        alert = transform.Find("AlertParticles").GetComponent<ParticleSystem>();
+    }
+
+    void FixedUpdate()
+    {
+        if (Triggered) {
+            agent.SetDestination(waypointTriggered.transform.position);
+            Vector3 direction = (Player.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+            if (agent.remainingDistance <= 0.02f) {
+                Triggered = false;
+                agent.isStopped = true;
+                StartCoroutine(_wait(5));
+            }
+        }    
     }
 
     void Patrol() {
@@ -35,11 +90,22 @@ public class NPCController : MonoBehaviour
     }
 
     void Tick() {
-        agent.destination = waypoints[index].position;
-
-        if (player != null && Vector3.Distance(transform.position, player.position) < aggroRange) {
-            agent.destination = player.position;
-            agent.speed = agentSpeed * 1.5f;
+        if (Triggered) {
+            Debug.Log("here");
+            agent.SetDestination(waypointTriggered.transform.position);
+            CancelInvoke("Tick");
+            CancelInvoke("Patrol");
+        } else {
+            agent.SetDestination(waypoints[index].position);
         }
+    }
+
+    IEnumerator _wait(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("restarting patrol");
+        agent.isStopped = false;
+        InvokeRepeating("Tick", 0, 0.5f);
+        InvokeRepeating("Patrol", 0, patrolTime);
     }
 }
