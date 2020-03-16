@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &7679067990823577421
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758719598366381594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7484361561243172885, guid: 8b8dfba729cf8fe4b83f7375c64fa655, type: 3}
 --- !u!1 &7679067990791957914
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +58,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7679067990791957914}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2701724982162903031, guid: 468f1b27c82a5a545bd907646e7030d2, type: 3}
 --- !u!23 &7679067990791957912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -141,20 +155,6 @@ MonoBehaviour:
   Player: {fileID: 0}
   waypointTriggered: {fileID: 0}
   crowd: {fileID: 0}
---- !u!64 &7679067990823577421
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2758719598366381594}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7484361561243172885, guid: 8b8dfba729cf8fe4b83f7375c64fa655, type: 3}
 --- !u!1001 &7679067990253200086
 PrefabInstance:
   m_ObjectHideFlags: 0
