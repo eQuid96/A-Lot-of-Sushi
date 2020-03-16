@@ -80,16 +80,16 @@ public class ThrowableObject : MonoBehaviour
         }
     }
     
-    private void OnTriggerEnter(Collider triggered) {
-        if (triggered.transform.CompareTag("Cone")){
+    private void OnTriggerEnter(Collider triggered) 
+    {
+        if (isThrowing && triggered.transform.CompareTag("Cone"))
+        {
             Detected();
         }
     }
 
     private void Detected(){
-        Vector3 augmented = startPosition;
-        augmented.y = augmented.y + 0.2f;
-        gameObject.transform.position = augmented;
+        ResetPosition();
         PlayerManager.instance.RemoveLife();
         NPC.Triggered = true;
     }
