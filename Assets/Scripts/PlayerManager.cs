@@ -5,10 +5,13 @@ public class PlayerManager : MonoBehaviour
 {
     public int score = 0;
     public int life = 0;
-    public bool isGameOver;
+    public bool isGameOver, isPause, isTimeOver;
 
+    private float gameTimer = 0.0f;
     // UI
     public Text playerScore_txt;
+    public Text timer_txt;
+    public GameObject[] lifesImg = new GameObject[MAX_PLAYER_LIFE];
 
     // EVENTS
     public delegate void GameOver();
@@ -16,6 +19,7 @@ public class PlayerManager : MonoBehaviour
 
     // STATS
     private const int MAX_PLAYER_LIFE = 3;
+    private const float MAX_GAME_TIMER = 180.0f; // GAME TIMER IN SECONDS
 
     public static PlayerManager instance = null;
 
@@ -31,9 +35,29 @@ public class PlayerManager : MonoBehaviour
     {
         score = 0;
         life = MAX_PLAYER_LIFE;
+        gameTimer = MAX_GAME_TIMER;
         playerScore_txt.text = score.ToString();
     }
 
+    private void Update()
+    {
+        if (isGameOver || isTimeOver)
+        {
+            return;
+        }
+
+        if (!isTimeOver && !isPause)
+        {
+            if (gameTimer <= 0)
+            {
+                isTimeOver = true;
+                gameTimer = 0;
+            }
+
+            gameTimer -= Time.deltaTime;
+            UpdateTimerText();
+        }
+    }
     public void RemoveLife(int amount = 1)
     {
         int tmpLife = life - amount;
@@ -42,10 +66,12 @@ public class PlayerManager : MonoBehaviour
         {
             isGameOver = true;
             onGameOver?.Invoke(); // SEND GAME OVER EVENT
-            tmpLife = 0;
+            life = 0;
+            lifesImg[0].SetActive(false);
             return;
         }
 
+        lifesImg[tmpLife].SetActive(false);
         life = tmpLife;
     }
 
@@ -65,5 +91,17 @@ public class PlayerManager : MonoBehaviour
         }
         score = tmpScore;
         playerScore_txt.text = tmpScore.ToString();
+    }
+
+    private void UpdateTimerText()
+    {
+        if (gameTimer <= 0)
+        {
+            timer_txt.text = "OVER";
+            return;
+        }
+        int min = Mathf.FloorToInt(gameTimer / 60);
+        int sec = Mathf.FloorToInt(gameTimer % 60);
+        timer_txt.text = min.ToString("00") + ":" + sec.ToString("00");
     }
 }

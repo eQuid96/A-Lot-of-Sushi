@@ -9,10 +9,10 @@ public class TouchRotation : MonoBehaviour
     private float yAngle = 0.0f;
     private float xAngTemp = 0.0f;
     private float yAngTemp = 0.0f;
-    private const float MIN_ROTATION_X = -90.0f;
-    private const float MAX_ROTATION_X = 90.0f;
-    private const float MIN_ROTATION_Y = -30.0f;
-    private const float MAX_ROTATION_Y = 30.0f;
+    private const float MIN_ROTATION_X = -80.0f;
+    private const float MAX_ROTATION_X = 65.0f;
+    private const float MIN_ROTATION_Y = -20.0f;
+    private const float MAX_ROTATION_Y = 20.0f;
     private void Start()
     {
         //Initialization our angles of camera

@@ -6,7 +6,6 @@ public class Sushi : MonoBehaviour
 {
     public Vector3 startPosition;
     public bool detectable;
-    public UIElements ui;
     public NPCController npc;
     [SerializeField]
     private AudioSource dishSound;

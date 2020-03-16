@@ -8,11 +8,19 @@ public class ThrowableObject : MonoBehaviour
     private bool hasCollide;
     private float timer = 0.0f;
     private const float MIN_TIME_ON_COLLISION = 0.5f;
+    private Vector3 startPosition;
+    private Quaternion startRotation;
+    private Transform startParent;
 
     [Header("Score Info:")]
     public int tableScore = 100;
+    public int ciotolaScore = 300;
+    public int tagliereScore = 200;
     void Start()
     {
+        startParent = transform.parent;
+        startPosition = transform.localPosition;
+        startRotation = transform.localRotation;
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
     }
@@ -30,7 +38,7 @@ public class ThrowableObject : MonoBehaviour
         isThrowing = false;
         
         Debug.Log(collision.transform.name);
-        Destroy(gameObject, 2.0f);
+        Invoke("ResetPosition", 2.0f);
         timer += Time.deltaTime;
         if (!hasCollide && timer >= MIN_TIME_ON_COLLISION)
         {
@@ -40,6 +48,29 @@ public class ThrowableObject : MonoBehaviour
                 PlayerManager.instance.AddScore(tableScore);
                 return;
             }
+            if (collision.transform.CompareTag("Ciotola"))
+            {
+                hasCollide = true;
+                PlayerManager.instance.AddScore(ciotolaScore);
+                return;
+            }
+            if (collision.transform.CompareTag("Tagliere"))
+            {
+                hasCollide = true;
+                PlayerManager.instance.AddScore(tagliereScore);
+                return;
+            }
         }
+    }
+
+    private void ResetPosition()
+    {
+        timer = 0;
+        hasCollide = false;
+        isThrowing = false;
+        rb.isKinematic = true;
+        transform.parent = startParent;
+        transform.localPosition = startPosition;
+        transform.localRotation = startRotation;
     }
 }
