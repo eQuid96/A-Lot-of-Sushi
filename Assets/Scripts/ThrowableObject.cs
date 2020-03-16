@@ -16,6 +16,15 @@ public class ThrowableObject : MonoBehaviour
     public int tableScore = 100;
     public int ciotolaScore = 300;
     public int tagliereScore = 200;
+
+    private NPCController NPC;
+    private AudioSource dishSound;
+
+    void Awake() {
+        NPC = GameObject.Find("Waitress").GetComponent<NPCController>();
+        dishSound = GameObject.Find("DishSound").GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         startParent = transform.parent;
@@ -61,6 +70,29 @@ public class ThrowableObject : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.name == "Waiter"){
+            Detected();
+        }else if (collision.gameObject.name == "Dish"){
+            dishSound.Play();
+        }
+    }
+    
+    private void OnTriggerEnter(Collider triggered) {
+        Debug.Log(triggered.gameObject.name);
+        if (triggered.gameObject.name == "cone"){
+            Detected();
+        }
+    }
+
+    private void Detected(){
+        Vector3 augmented = startPosition;
+        augmented.y = augmented.y + 2f;
+        gameObject.transform.position = augmented;
+        // ui.Detected();  
+        NPC.Triggered = true;
     }
 
     private void ResetPosition()
