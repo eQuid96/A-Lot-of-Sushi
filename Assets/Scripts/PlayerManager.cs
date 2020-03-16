@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     // UI
     public Text playerScore_txt;
     public Text timer_txt;
+    public GameObject pause_btn, pauseMenu;
     public GameObject[] lifesImg = new GameObject[MAX_PLAYER_LIFE];
 
     // EVENTS
@@ -103,5 +105,24 @@ public class PlayerManager : MonoBehaviour
         int min = Mathf.FloorToInt(gameTimer / 60);
         int sec = Mathf.FloorToInt(gameTimer % 60);
         timer_txt.text = min.ToString("00") + ":" + sec.ToString("00");
+    }
+
+    public void Resume()
+    {
+        isPause = false;
+        pause_btn.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void Pause()
+    {
+        isPause = true;
+        pause_btn.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }

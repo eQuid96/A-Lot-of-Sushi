@@ -18,7 +18,12 @@ public class GrabInteraction : MonoBehaviour
 
     void Update()
     {
-        if (!isGrabbing && !PlayerManager.instance.isGameOver && !PlayerManager.instance.isPause && !PlayerManager.instance.isTimeOver)
+        if (PlayerManager.instance.isGameOver && PlayerManager.instance.isPause && PlayerManager.instance.isTimeOver)
+        {
+            return;
+        }
+
+        if (!isGrabbing)
         {
             Grab();
         }
