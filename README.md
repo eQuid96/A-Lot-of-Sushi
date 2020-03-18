@@ -9,7 +9,7 @@ Get rid of it in the other people's plates before the time is up.
 Don't let the waitress see you.
 ![Logo](https://img.itch.zone/aW1hZ2UvNTg2OTMxLzMxMDg2NjkuanBn/original/0DQMGC.jpg)
 
-#Commands:
+# Commands:
 Grab the sushi with your finger, keep holding the right side of the screen to charge the shot, release to throw.
 Look around by dragging the left part of the screen.
 
