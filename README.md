@@ -9,8 +9,8 @@ Get rid of it in the other people's plates before the time is up.
 Don't let the waitress see you.
 ![Logo](https://img.itch.zone/aW1hZ2UvNTg2OTMxLzMxMDg2NjkuanBn/original/0DQMGC.jpg)
 
-# Commands:
-Grab the sushi with your finger, keep holding the right side of the screen to charge the shot, release to throw.
+# Controls:
+Grab the sushi in front of you by click on it , keep holding the right part of the screen to charge the shot, release to throw.
 Look around by dragging the left part of the screen.
 
 The game is made with Unity 2019.3.0f
