@@ -6,12 +6,12 @@ public class PlayerManager : MonoBehaviour
 {
     public int score = 0;
     public int life = 0;
-    public bool isGameOver, isPause, isTimeOver;
+    public bool isGameOver, isPause = true, isTimeOver;
 
     private float gameTimer = 0.0f;
     // UI
     public Text playerScore_txt;
-    public Text timer_txt;
+    public Text timer_txt,winScore_txt;
     public GameObject pause_btn, pauseMenu;
     public GameObject[] lifesImg = new GameObject[MAX_PLAYER_LIFE];
     public GameObject win, loss;
@@ -57,6 +57,7 @@ public class PlayerManager : MonoBehaviour
                 isTimeOver = true;
                 gameTimer = 0;
                 win.SetActive(true);
+                winScore_txt.text = score.ToString();
                 waitress.agent.isStopped = true;
                 waitress.transform.Find("OMEDETO").GetComponent<AudioSource>().Play();
             }

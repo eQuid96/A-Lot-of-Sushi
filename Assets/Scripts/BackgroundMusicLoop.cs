@@ -7,9 +7,20 @@ public class BackgroundMusicLoop : MonoBehaviour
     public AudioSource myAudio;
     [Range(0f, 26.5f)] // loops at 14.45-23.17
     public float loopStart, loopEnd;
- 
-    private void Awake() {
-        DontDestroyOnLoad(gameObject);    
+
+    private static BackgroundMusicLoop instace = null;
+    private void Awake() 
+    {
+        if (instace != null && instace != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instace = this;
+        }
+
+        DontDestroyOnLoad(this.gameObject);    
     }
 
     void Start(){
