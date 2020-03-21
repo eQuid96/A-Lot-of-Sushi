@@ -23,12 +23,14 @@ public class PlayerManager : MonoBehaviour
 
     // STATS
     private const int MAX_PLAYER_LIFE = 3;
-    private const float MAX_GAME_TIMER = 30.0f; // GAME TIMER IN SECONDS
+    private const float MAX_GAME_TIMER = 60.0f; // GAME TIMER IN SECONDS
 
     public static PlayerManager instance = null;
+    private GameObject sounds;
 
     private void Awake()
     {
+        sounds = GameObject.Find("[Sounds Source]");
         if (!instance)
         {
             instance = this;
@@ -62,6 +64,7 @@ public class PlayerManager : MonoBehaviour
                 win.SetActive(true);
                 winScore_txt.text = score.ToString();
                 waitress.agent.isStopped = true;
+                sounds.transform.Find("Win").GetComponent<AudioSource>().Play();
                 waitress.transform.Find("OMEDETO").GetComponent<AudioSource>().Play();
             }
 
@@ -78,6 +81,7 @@ public class PlayerManager : MonoBehaviour
             isGameOver = true;
             loss.SetActive(true);
             waitress.agent.isStopped = true;
+            sounds.transform.Find("GameOver").GetComponent<AudioSource>().Play();
             waitress.transform.Find("DISGRACERU").GetComponent<AudioSource>().Play();
             life = 0;
             lifesImg[0].SetActive(false);

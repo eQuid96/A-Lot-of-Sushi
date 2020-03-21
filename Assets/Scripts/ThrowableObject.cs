@@ -25,7 +25,7 @@ public class ThrowableObject : MonoBehaviour
         sounds = GameObject.Find("[Sounds Source]");
         NPC = GameObject.Find("Waitress").GetComponent<NPCController>();
         dishSound = sounds.transform.Find("DishSound").GetComponent<AudioSource>();
-        whoosh = sounds.transform.Find("DishSound").GetComponent<AudioSource>();
+        whoosh = sounds.transform.Find("Whoosh").GetComponent<AudioSource>();
     }
 
     void Start()

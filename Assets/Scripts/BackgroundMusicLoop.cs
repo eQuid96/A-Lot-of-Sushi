@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BackgroundMusicLoop : MonoBehaviour
 {
@@ -8,8 +6,7 @@ public class BackgroundMusicLoop : MonoBehaviour
     [Range(0f, 26.5f)] // loops at 14.45-23.17
     public float loopStart, loopEnd;
     public GameObject player;
-
-
+    
     private static BackgroundMusicLoop instance = null;
     private void Awake()
     {
