@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour
 
     // STATS
     private const int MAX_PLAYER_LIFE = 3;
-    private const float MAX_GAME_TIMER = 180.0f; // GAME TIMER IN SECONDS
+    private const float MAX_GAME_TIMER = 30.0f; // GAME TIMER IN SECONDS
 
     public static PlayerManager instance = null;
 
@@ -120,6 +120,7 @@ public class PlayerManager : MonoBehaviour
         isPause = false;
         pause_btn.SetActive(true);
         pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void Pause()
@@ -127,10 +128,13 @@ public class PlayerManager : MonoBehaviour
         isPause = true;
         pause_btn.SetActive(false);
         pauseMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void Restart()
     {
+        isPause = false;
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }
