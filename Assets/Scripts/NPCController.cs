@@ -21,6 +21,7 @@ public class NPCController : MonoBehaviour
     public GameObject flame1, flame2;
 
     //TRIGGERED EVENT
+    [SerializeField]
     private bool _triggered;
     public bool Triggered {
         get {

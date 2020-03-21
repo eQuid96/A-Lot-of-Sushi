@@ -156,3 +156,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isThrowing: 0
   tableScore: 100
+  ciotolaScore: 300
+  tagliereScore: 200

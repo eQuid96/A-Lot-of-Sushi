@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour
 
     // STATS
     private const int MAX_PLAYER_LIFE = 3;
-    private const float MAX_GAME_TIMER = 180.0f; // GAME TIMER IN SECONDS
+    private const float MAX_GAME_TIMER = 20.0f; // GAME TIMER IN SECONDS
 
     public static PlayerManager instance = null;
 

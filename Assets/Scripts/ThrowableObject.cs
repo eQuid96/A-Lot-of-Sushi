@@ -18,11 +18,14 @@ public class ThrowableObject : MonoBehaviour
     public int tagliereScore = 200;
 
     private NPCController NPC;
-    private AudioSource dishSound;
+    private GameObject sounds;
+    private AudioSource dishSound, whoosh;
 
     void Awake() {
+        sounds = GameObject.Find("[Sounds Source]");
         NPC = GameObject.Find("Waitress").GetComponent<NPCController>();
-        dishSound = GameObject.Find("DishSound").GetComponent<AudioSource>();
+        dishSound = sounds.transform.Find("DishSound").GetComponent<AudioSource>();
+        whoosh = sounds.transform.Find("DishSound").GetComponent<AudioSource>();
     }
 
     void Start()
@@ -41,6 +44,7 @@ public class ThrowableObject : MonoBehaviour
         rb.isKinematic = false;
         throwForce = _throwForce;
         rb.AddForce(Camera.main.transform.forward * throwForce, ForceMode.Impulse);
+        whoosh.Play();
     }
     private void OnCollisionStay(Collision collision)
     {

@@ -26,7 +26,6 @@ public class BackgroundMusicLoop : MonoBehaviour
     void Start(){
         myAudio.Play();
     }
- 
 
     void Update(){
         // TODO: put here
