@@ -37,6 +37,8 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0;
+        isPause = false;
         score = 0;
         life = MAX_PLAYER_LIFE;
         gameTimer = MAX_GAME_TIMER;
@@ -47,6 +49,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (isGameOver || isTimeOver)
         {
+            Time.timeScale = 0;
             return;
         }
 
