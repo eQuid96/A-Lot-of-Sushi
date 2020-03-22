@@ -95,7 +95,7 @@ public class ThrowableObject : MonoBehaviour
     private void Detected(){
         ResetPosition();
         PlayerManager.instance.RemoveLife();
-        NPC.Triggered = true;
+        NPC.DoTrigger(true);
     }
 
     private void ResetPosition()
