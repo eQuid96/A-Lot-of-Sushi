@@ -49,8 +49,6 @@ public class ThrowableObject : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         isThrowing = false;
-        
-        Debug.Log(collision.transform.name);
         Invoke("ResetPosition", 2.0f);
         timer += Time.deltaTime;
         if (!hasCollide && timer >= MIN_TIME_ON_COLLISION)

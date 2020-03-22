@@ -2,7 +2,6 @@
 
 public class TouchRotation : MonoBehaviour
 {
-    private int screenWidth;
     private Vector3 _startTouch;
     private Vector3 _endTouch;
     private float xAngle = 0.0f;
@@ -13,12 +12,14 @@ public class TouchRotation : MonoBehaviour
     private const float MAX_ROTATION_X = 80.0f;
     private const float MIN_ROTATION_Y = -20.0f;
     private const float MAX_ROTATION_Y = 20.0f;
+    private int width, height; // SCREEN WIDTH AND HIGHT RESOLUTION
     private void Start()
     {
         //Initialization our angles of camera
         xAngle = 0.0f;
         yAngle = 0.0f;
-        screenWidth = Screen.width;
+        width = Screen.width;
+        height = Screen.height;
         this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
     }
     private void Update()
@@ -27,7 +28,7 @@ public class TouchRotation : MonoBehaviour
         {
             for (int i = 0; i < Input.touchCount; i++)
             {
-                if (isLeftSide(Input.GetTouch(i).position))
+                if (isRotationArea(Input.GetTouch(i).position))
                 {
                     if (Input.GetTouch(i).phase == TouchPhase.Began)
                     {
@@ -52,10 +53,10 @@ public class TouchRotation : MonoBehaviour
         }
     }
 
-    // RETURN TRUE IF THE TOUCH INPUT IS ON THE LEFT SIDE OF THE SCREEN
-    private bool isLeftSide(Vector2 input)
+    // RETURN TRUE IF THE TOUCH INPUT IS ON THE BOTTOM SIDE OF THE SCREEN
+    private bool isRotationArea(Vector2 input)
     {
-        int leftSide = screenWidth / 2;
-        return input.x <= leftSide ? true : false;
+        int rotationArea =  height / 6;
+        return input.y <= rotationArea ? true : false;
     }
 }
