@@ -999,7 +999,7 @@ PrefabInstance:
     - target: {fileID: 7642948277412583228, guid: ddaf6945a89380a4491bd0c4157df74c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -219.2
+      value: -214.9
       objectReference: {fileID: 0}
     - target: {fileID: 7642948277412583228, guid: ddaf6945a89380a4491bd0c4157df74c,
         type: 3}
@@ -1009,7 +1009,12 @@ PrefabInstance:
     - target: {fileID: 7642948277412583228, guid: ddaf6945a89380a4491bd0c4157df74c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 324.40488
+      value: 314.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642948277412583228, guid: ddaf6945a89380a4491bd0c4157df74c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 346.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddaf6945a89380a4491bd0c4157df74c, type: 3}
@@ -1129,6 +1134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CreditsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783217173843291498, guid: c5f935a3811164d4f97b9916460a7e5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5783217173863977257, guid: c5f935a3811164d4f97b9916460a7e5e,
         type: 3}
