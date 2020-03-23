@@ -75,7 +75,7 @@ public class NPCController : MonoBehaviour
         alert = transform.Find("AlertParticles").GetComponent<ParticleSystem>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Triggered) {
             agent.SetDestination(waypointTriggered.transform.position);
