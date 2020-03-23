@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 public class UIMainMenu : MonoBehaviour
 {
-    public GameObject mainMenu, settingsMenu;
+    public GameObject mainMenu, settingsMenu, creditsMenu;
     public AudioMixer audioMixer;
 
     public void Play()
@@ -23,10 +23,17 @@ public class UIMainMenu : MonoBehaviour
             case 0:
                 mainMenu.SetActive(true);
                 settingsMenu.SetActive(false);
+                creditsMenu.SetActive(false);
                 break;
             case 1:
                 mainMenu.SetActive(false);
                 settingsMenu.SetActive(true);
+                creditsMenu.SetActive(false);
+                break;
+            case 2:
+                mainMenu.SetActive(false);
+                settingsMenu.SetActive(false);
+                creditsMenu.SetActive(true);
                 break;
             default:
                 break;
