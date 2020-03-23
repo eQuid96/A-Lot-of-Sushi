@@ -13,6 +13,12 @@ public class TouchRotation : MonoBehaviour
     private const float MAX_ROTATION_X = 80.0f;
     private const float MIN_ROTATION_Y = -20.0f;
     private const float MAX_ROTATION_Y = 20.0f;
+
+    //WEBGL VARIABLES
+
+    private float rotationSpeed;
+    private Vector3 _cameraRotation;
+
     private void Start()
     {
         //Initialization our angles of camera
@@ -20,9 +26,17 @@ public class TouchRotation : MonoBehaviour
         yAngle = 0.0f;
         screenWidth = Screen.width;
         this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+       
+        //WEBGL ONLY
+        rotationSpeed = 0.5f;
+
     }
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+
     private void Update()
     {
+
         if (Input.touchCount > 0)
         {
             for (int i = 0; i < Input.touchCount; i++)
@@ -58,4 +72,22 @@ public class TouchRotation : MonoBehaviour
         int leftSide = screenWidth / 2;
         return input.x <= leftSide ? true : false;
     }
+
+#endif
+
+#if UNITY_WEBGL || UNITY_EDITOR
+
+
+    private void Update()
+    {
+        _cameraRotation = new Vector3(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), 0.0f);
+        xAngle += _cameraRotation.y * rotationSpeed;
+        yAngle += _cameraRotation.x * rotationSpeed;
+        xAngle = Mathf.Clamp(xAngle, MIN_ROTATION_X, MAX_ROTATION_X);
+        yAngle = Mathf.Clamp(yAngle, MIN_ROTATION_Y, MAX_ROTATION_Y);
+        //Rotate camera
+        this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+    }
+
+#endif
 }

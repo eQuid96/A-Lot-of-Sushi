@@ -23,6 +23,8 @@ public class GrabInteraction : MonoBehaviour
             return;
         }
 
+#if UNITY_ANDROID
+
         if (!isGrabbing)
         {
             Grab();
@@ -121,4 +123,109 @@ public class GrabInteraction : MonoBehaviour
         int r_screenResolution = Screen.width / 2;
         return input.x >= r_screenResolution ? true : false;
     }
+
+#endif
+
+        //WEBGL INTERACTION STARTS HERE
+
+#if UNITY_WEBGL || UNITY_EDITOR
+
+        print("Running WebGL");
+
+        if (!isGrabbing)
+        {
+            Grab();
+        }
+
+        else
+        {
+
+            if (Input.GetKeyDown(KeyCode.Space))
+
+            {
+
+                throwBar.SetActive(true);
+
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+
+                if (throwForce >= MAX_THROW_FORCE)
+                {
+                    isDecreasing = true;
+                }
+
+                if (throwForce <= MIN_THROW_FORCE)
+                {
+                    isDecreasing = false;
+                }
+
+                if (isDecreasing)
+                {
+                    throwForce -= Time.deltaTime * THROW_CHARGE_SPEED;
+                }
+                else
+                {
+                    throwForce += Time.deltaTime * THROW_CHARGE_SPEED;
+                }
+
+                throwSlider.fillAmount = (throwForce - MIN_THROW_FORCE) / (MAX_THROW_FORCE - MIN_THROW_FORCE);
+
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+
+
+            {
+                Debug.Log(throwForce);
+                _grabbedItem.Throw(throwForce);
+                _grabbedItem = null;
+                isGrabbing = false;
+                RestThrowBar();
+            }
+        }
+    }
+
+
+    private void RestThrowBar()
+    {
+        throwSlider.fillAmount = 0.0f;
+        throwForce = MIN_THROW_FORCE;
+        throwBar.SetActive(false);
+        isGrabbing = false;
+
+    }
+    private void Grab()
+    {
+
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Construct a ray from the current touch coordinates
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                // Grab game object with tab Grab
+                if (hit.transform.CompareTag("Grab"))
+                {
+                    _grabbedItem = hit.transform.GetComponent<ThrowableObject>();
+                    hit.transform.position = sushiAnchorPos.position;
+                    hit.transform.parent = sushiAnchorPos.parent;
+                }
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0) && _grabbedItem)
+        {
+            isGrabbing = true;
+        }
+
+
+    }
+
+
+#endif
+
 }
