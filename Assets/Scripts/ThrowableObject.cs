@@ -20,7 +20,7 @@ public class ThrowableObject : MonoBehaviour
     private NPCController NPC;
     private GameObject sounds;
     private AudioSource dishSound, whoosh;
-    private TrailRenderer tr;
+    private TrailRenderer trail;
 
     void Awake() {
         sounds = GameObject.Find("[Sounds Source]");
@@ -36,14 +36,14 @@ public class ThrowableObject : MonoBehaviour
         startRotation = transform.localRotation;
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
-        tr = transform.GetComponent<TrailRenderer>();
-        tr.enabled = isThrowing;
+        trail = transform.GetComponent<TrailRenderer>();
+        trail.enabled = isThrowing;
     }
 
     public void Throw(float _throwForce)
     {
         isThrowing = true;
-        tr.enabled = isThrowing;
+        trail.enabled = isThrowing;
         rb.transform.parent = null;
         rb.isKinematic = false;
         throwForce = _throwForce;
@@ -53,10 +53,10 @@ public class ThrowableObject : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         isThrowing = false;
-        tr.enabled = isThrowing;
+        trail.enabled = isThrowing;
 
         Debug.Log(collision.transform.name);
-        Invoke("ResetPosition", 2.0f);
+        Invoke("ResetPosition", 1.0f);
         timer += Time.deltaTime;
         if (!hasCollide && timer >= MIN_TIME_ON_COLLISION)
         {
@@ -108,7 +108,7 @@ public class ThrowableObject : MonoBehaviour
         timer = 0;
         hasCollide = false;
         isThrowing = false;
-        tr.enabled = false;
+        trail.enabled = false;
         rb.isKinematic = true;
         transform.parent = startParent;
         transform.localPosition = startPosition;
