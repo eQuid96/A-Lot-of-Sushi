@@ -24,16 +24,19 @@ public class UIMainMenu : MonoBehaviour
                 mainMenu.SetActive(true);
                 settingsMenu.SetActive(false);
                 creditsMenu.SetActive(false);
+                Time.timeScale = 0;
                 break;
             case 1:
                 mainMenu.SetActive(false);
                 settingsMenu.SetActive(true);
                 creditsMenu.SetActive(false);
+                Time.timeScale = 0;
                 break;
             case 2:
                 mainMenu.SetActive(false);
                 settingsMenu.SetActive(false);
                 creditsMenu.SetActive(true);
+                Time.timeScale = 1;
                 break;
             default:
                 break;
