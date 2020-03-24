@@ -11,8 +11,8 @@ public class PlayerManager : MonoBehaviour
     private float gameTimer = 0.0f;
     // UI
     public Text playerScore_txt;
-    public Text timer_txt,winScore_txt;
-    public GameObject pause_btn, pauseMenu;
+    public Text timer_txt, winScore_txt;
+    public GameObject pause_btn, pauseMenu, infoMenuAndroid, infoMenuWebGL;
     public GameObject[] lifesImg = new GameObject[MAX_PLAYER_LIFE];
     public GameObject win, loss;
     public NPCController waitress;
@@ -26,7 +26,8 @@ public class PlayerManager : MonoBehaviour
     private const float MAX_GAME_TIMER = 60.0f; // GAME TIMER IN SECONDS
 
     public static PlayerManager instance = null;
-    private GameObject sounds;
+    private GameObject sounds, music;
+    private bool musicActive;
 
     private void Awake()
     {
@@ -45,6 +46,22 @@ public class PlayerManager : MonoBehaviour
         life = MAX_PLAYER_LIFE;
         gameTimer = MAX_GAME_TIMER;
         playerScore_txt.text = score.ToString();
+        musicActive = true;
+
+        //InfoBox Device Fetch
+#if UNITY_WEBGL
+        infoMenuWebGL.SetActive(true);
+        infoMenuAndroid.SetActive(false);
+        print("webgl instructions");
+#endif
+
+
+#if UNITY_ANDROID
+        infoMenuAndroid.SetActive(true);
+        infoMenuWebGL.SetActive(false);
+
+#endif
+
     }
 
     private void Update()
@@ -143,5 +160,28 @@ public class PlayerManager : MonoBehaviour
         isPause = false;
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    public void Freeze()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void MuteMusic()
+    {
+        music = GameObject.Find("Audio Source");
+        musicActive = !musicActive;
+
+        if (!musicActive)
+        {
+            music.GetComponent<AudioSource>().volume = 0;
+        }
+
+        else
+
+        {
+            music.GetComponent<AudioSource>().volume = 0.5f;
+        }
+        
     }
 }
