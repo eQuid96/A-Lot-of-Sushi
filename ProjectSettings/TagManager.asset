@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Grab
+  - Table
+  - Client
+  - Tagliere
+  - Ciotola
+  - Cone
+  - Waiter
   layers:
   - Default
   - TransparentFX
@@ -13,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - UnMesh
   - 
   - 
   - 
