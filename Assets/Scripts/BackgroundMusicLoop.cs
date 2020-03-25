@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackgroundMusicLoop : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class BackgroundMusicLoop : MonoBehaviour
         if (player == null)
         {
             player = GameObject.Find("Player");
+            myAudio.volume = 0.5f;
         }
         else
         {
@@ -45,6 +47,8 @@ public class BackgroundMusicLoop : MonoBehaviour
 
             //check if the game is resumed
             if (player.GetComponent<PlayerManager>().isPause == false) myAudio.UnPause();
+
+            if (player.GetComponent<PlayerManager>().isGameOver || player.GetComponent<PlayerManager>().isTimeOver) myAudio.Pause();
         }
     }
 }
