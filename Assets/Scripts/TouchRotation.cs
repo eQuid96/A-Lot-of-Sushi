@@ -19,25 +19,35 @@ public class TouchRotation : MonoBehaviour
     private float rotationSpeed;
     private Vector3 _cameraRotation;
 
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
+
     private void Start()
     {
         //Initialization our angles of camera
         xAngle = 0.0f;
         yAngle = 0.0f;
         screenWidth = Screen.width;
-        this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
-       
+        transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+
         //WEBGL ONLY
         rotationSpeed = 1f;
-
     }
 
-#if UNITY_ANDROID && !UNITY_EDITOR
+    // RETURN TRUE IF THE TOUCH INPUT IS ON THE LEFT SIDE OF THE SCREEN
+    private bool isLeftSide(Vector2 input)
+    {
+        int leftSide = screenWidth / 2;
+        return input.x <= leftSide;
+    }
 
     private void Update()
     {
-
-        if (Input.touchCount > 0)
+#if UNITY_ANDROID && !UNITY_EDITOR
+ if (Input.touchCount > 0)
         {
             for (int i = 0; i < Input.touchCount; i++)
             {
@@ -59,35 +69,22 @@ public class TouchRotation : MonoBehaviour
                         xAngle = Mathf.Clamp(xAngle, MIN_ROTATION_X, MAX_ROTATION_X);
                         yAngle = Mathf.Clamp(yAngle, MIN_ROTATION_Y, MAX_ROTATION_Y);
                         //Rotate camera
-                        this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
+                        transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
                     }
                 }
             }
         }
-    }
-
-    // RETURN TRUE IF THE TOUCH INPUT IS ON THE LEFT SIDE OF THE SCREEN
-    private bool isLeftSide(Vector2 input)
-    {
-        int leftSide = screenWidth / 2;
-        return input.x <= leftSide ? true : false;
-    }
-
-#endif
-
-#if UNITY_WEBGL || UNITY_EDITOR
-
-
-    private void Update()
-    {
+#elif UNITY_WEBGL || UNITY_EDITOR
+        if (Time.timeScale < 1) 
+            return;
+        
         _cameraRotation = new Vector3(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), 0.0f);
         xAngle += _cameraRotation.y * rotationSpeed;
         yAngle += _cameraRotation.x * rotationSpeed;
         xAngle = Mathf.Clamp(xAngle, MIN_ROTATION_X, MAX_ROTATION_X);
         yAngle = Mathf.Clamp(yAngle, MIN_ROTATION_Y, MAX_ROTATION_Y);
         //Rotate camera
-        this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
-    }
-
+        transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
 #endif
+    }
 }

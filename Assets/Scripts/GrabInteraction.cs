@@ -78,7 +78,6 @@ public class GrabInteraction : MonoBehaviour
 
                         if (Input.GetTouch(i).phase == TouchPhase.Ended)
                         {
-                            Debug.Log(throwForce);
                             _grabbedItem.Throw(throwForce);
                             _grabbedItem = null;
                             isGrabbing = false;
@@ -100,7 +99,6 @@ public class GrabInteraction : MonoBehaviour
         else
         {
             if (Input.GetKeyDown(KeyCode.Space))
-
             {
                 throwBar.SetActive(true);
             }
@@ -130,10 +128,7 @@ public class GrabInteraction : MonoBehaviour
             }
 
             if (Input.GetKeyUp(KeyCode.Space))
-
-
             {
-                Debug.Log(throwForce);
                 _grabbedItem.Throw(throwForce);
                 _grabbedItem = null;
                 isGrabbing = false;
@@ -212,7 +207,7 @@ public class GrabInteraction : MonoBehaviour
     // RETURN TRUE IF THE TOUCH INPUT IS ON THE RIGHT SIDE OF THE SCREEN
     private bool isRightSide(Vector2 input)
     {
-        int r_screenResolution = Screen.width / 2;
-        return input.x >= r_screenResolution ? true : false;
+        int rScreenResolution = Screen.width / 2;
+        return input.x >= rScreenResolution ? true : false;
     }
 }

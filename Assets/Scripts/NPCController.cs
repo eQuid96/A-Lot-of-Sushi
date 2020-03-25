@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -21,7 +20,7 @@ public class NPCController : MonoBehaviour
     private Material coneMat;
 
     //TRIGGERED EVENT
-    [SerializeField] private bool triggered;
+    private bool triggered;
     [SerializeField] private GameObject waypointTriggered;
     [SerializeField] private GameObject crowd;
     private AudioSource gasp;
@@ -110,7 +109,6 @@ public class NPCController : MonoBehaviour
     {
         if (triggered)
         {
-            Debug.Log("here");
             agent.SetDestination(waypointTriggered.transform.position);
             CancelInvoke("Tick");
             CancelInvoke("Patrol");
@@ -124,7 +122,6 @@ public class NPCController : MonoBehaviour
     IEnumerator _wait(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        Debug.Log("restarting patrol");
         agent.isStopped = false;
         InvokeRepeating("Tick", 0, 0.5f);
         InvokeRepeating("Patrol", 0, patrolTime);
