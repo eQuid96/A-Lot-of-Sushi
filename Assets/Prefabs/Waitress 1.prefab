@@ -489,7 +489,6 @@ MonoBehaviour:
   agent: {fileID: 2921854660233906739}
   flame1: {fileID: 5946700487736296613}
   flame2: {fileID: 1111111817537606244}
-  triggered: 0
   waypointTriggered: {fileID: 0}
   crowd: {fileID: 0}
 --- !u!136 &8505560272684340272

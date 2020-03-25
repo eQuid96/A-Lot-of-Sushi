@@ -104,10 +104,8 @@ public class ThrowableObject : MonoBehaviour
     
     private void OnTriggerEnter(Collider triggered) 
     {
-        if (isThrowing && triggered.transform.CompareTag("Cone"))
-        {
+        if (isThrowing && triggered.transform.CompareTag("Cone")) 
             Detected();
-        }
     }
 
     private void Detected(){

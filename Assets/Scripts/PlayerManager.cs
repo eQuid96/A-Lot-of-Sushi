@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     public bool isGameOver, isPause = true, isTimeOver;
 
     private float gameTimer = 0.0f;
+
     // UI
     public Text playerScore_txt;
     public Text timer_txt, winScore_txt;
@@ -19,6 +20,7 @@ public class PlayerManager : MonoBehaviour
 
     // EVENTS
     public delegate void GameOver();
+
     public event GameOver onGameOver;
 
     // STATS
@@ -27,15 +29,15 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager instance = null;
     private GameObject sounds, music;
+    private AudioSource winAudio, omedeto;
     private bool musicActive;
 
     private void Awake()
     {
         sounds = GameObject.Find("[Sounds Source]");
-        if (!instance)
-        {
-            instance = this;
-        }
+        winAudio = sounds.transform.Find("Win").GetComponent<AudioSource>();
+        omedeto = waitress.transform.Find("OMEDETO").GetComponent<AudioSource>();
+        if (!instance) instance = this;
     }
 
     void Start()
@@ -53,13 +55,10 @@ public class PlayerManager : MonoBehaviour
         infoMenuWebGL.SetActive(true);
         infoMenuAndroid.SetActive(false);
 #endif
-
-
 #if UNITY_ANDROID
         infoMenuAndroid.SetActive(true);
         infoMenuWebGL.SetActive(false);
 #endif
-
     }
 
     private void Update()
@@ -79,14 +78,14 @@ public class PlayerManager : MonoBehaviour
                 win.SetActive(true);
                 winScore_txt.text = score.ToString();
                 waitress.agent.isStopped = true;
-                sounds.transform.Find("Win").GetComponent<AudioSource>().Play();
-                waitress.transform.Find("OMEDETO").GetComponent<AudioSource>().Play();
+                winAudio.Play();
+                omedeto.Play();
             }
-
             gameTimer -= Time.deltaTime;
             UpdateTimerText();
         }
     }
+
     public void RemoveLife(int amount = 1)
     {
         int tmpLife = life - amount;
@@ -110,9 +109,7 @@ public class PlayerManager : MonoBehaviour
     public void AddScore(int amount)
     {
         if (isGameOver)
-        {
             return;
-        }
 
         int tmpScore = score + amount;
         if (tmpScore >= int.MaxValue)
@@ -121,6 +118,7 @@ public class PlayerManager : MonoBehaviour
             playerScore_txt.text = tmpScore.ToString();
             return;
         }
+
         score = tmpScore;
         playerScore_txt.text = tmpScore.ToString();
     }
@@ -132,6 +130,7 @@ public class PlayerManager : MonoBehaviour
             timer_txt.text = "OVER";
             return;
         }
+
         int min = Mathf.FloorToInt(gameTimer / 60);
         int sec = Mathf.FloorToInt(gameTimer % 60);
         timer_txt.text = min.ToString("00") + ":" + sec.ToString("00");
@@ -174,12 +173,9 @@ public class PlayerManager : MonoBehaviour
         {
             music.GetComponent<AudioSource>().volume = 0;
         }
-
         else
-
         {
             music.GetComponent<AudioSource>().volume = 0.5f;
         }
-        
     }
 }
