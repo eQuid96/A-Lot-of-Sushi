@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+
 [RequireComponent(typeof(Rigidbody))]
 public class ThrowableObject : MonoBehaviour
 {
@@ -21,8 +23,11 @@ public class ThrowableObject : MonoBehaviour
     private GameObject sounds;
     private AudioSource dishSound, whoosh;
     private TrailRenderer trail;
+    public GameObject popUpScore;
 
-    void Awake() {
+    void Awake() 
+    
+    {
         sounds = GameObject.Find("[Sounds Source]");
         NPC = GameObject.Find("Waitress").GetComponent<NPCController>();
         dishSound = sounds.transform.Find("DishSound").GetComponent<AudioSource>();
@@ -38,6 +43,8 @@ public class ThrowableObject : MonoBehaviour
         rb.isKinematic = true;
         trail = transform.GetComponent<TrailRenderer>();
         trail.enabled = isThrowing;
+        popUpScore.SetActive(false);
+
     }
 
     public void Throw(float _throwForce)
@@ -64,18 +71,24 @@ public class ThrowableObject : MonoBehaviour
             {
                 hasCollide = true;
                 PlayerManager.instance.AddScore(tableScore);
-                return;
+                popUpScore.SetActive(true);
+                popUpScore.GetComponent<Text>().text = ("+" + tableScore);
+                 return;
             }
             if (collision.transform.CompareTag("Ciotola"))
             {
                 hasCollide = true;
                 PlayerManager.instance.AddScore(ciotolaScore);
+                popUpScore.SetActive(true);
+                popUpScore.GetComponent<Text>().text = ("+" + ciotolaScore);
                 return;
             }
             if (collision.transform.CompareTag("Tagliere"))
             {
                 hasCollide = true;
                 PlayerManager.instance.AddScore(tagliereScore);
+                popUpScore.SetActive(true);
+                popUpScore.GetComponent<Text>().text = ("+" + tagliereScore);
                 return;
             }
         }
@@ -105,6 +118,7 @@ public class ThrowableObject : MonoBehaviour
 
     private void ResetPosition()
     {
+        popUpScore.SetActive(false);
         timer = 0;
         hasCollide = false;
         isThrowing = false;

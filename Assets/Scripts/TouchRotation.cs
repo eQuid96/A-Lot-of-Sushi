@@ -28,7 +28,7 @@ public class TouchRotation : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(yAngle, xAngle, 0.0f);
        
         //WEBGL ONLY
-        rotationSpeed = 0.5f;
+        rotationSpeed = 1f;
 
     }
 

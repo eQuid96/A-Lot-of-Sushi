@@ -52,7 +52,7 @@ public class PlayerManager : MonoBehaviour
 #if UNITY_WEBGL
         infoMenuWebGL.SetActive(true);
         infoMenuAndroid.SetActive(false);
-        print("webgl instructions");
+        
 #endif
 
 
