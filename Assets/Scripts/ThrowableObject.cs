@@ -62,7 +62,7 @@ public class ThrowableObject : MonoBehaviour
         isThrowing = false;
         trail.enabled = isThrowing;
 
-        Debug.Log(collision.transform.name);
+        // Debug.Log(collision.transform.name);
         Invoke("ResetPosition", 1.0f);
         timer += Time.deltaTime;
         if (!hasCollide && timer >= MIN_TIME_ON_COLLISION)

@@ -49,17 +49,15 @@ public class PlayerManager : MonoBehaviour
         musicActive = true;
 
         //InfoBox Device Fetch
-#if UNITY_WEBGL
+#if UNITY_WEBGL || UNITY_EDITOR
         infoMenuWebGL.SetActive(true);
         infoMenuAndroid.SetActive(false);
-        
 #endif
 
 
 #if UNITY_ANDROID
         infoMenuAndroid.SetActive(true);
         infoMenuWebGL.SetActive(false);
-
 #endif
 
     }

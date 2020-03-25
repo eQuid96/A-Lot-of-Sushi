@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class GrabInteraction : MonoBehaviour
 {
     public bool isGrabbing;
@@ -11,10 +12,12 @@ public class GrabInteraction : MonoBehaviour
     public GameObject throwBar;
     public Image throwSlider;
     private bool isDecreasing;
+
     private void Start()
     {
         RestThrowBar();
     }
+
 
     void Update()
     {
@@ -22,9 +25,15 @@ public class GrabInteraction : MonoBehaviour
         {
             return;
         }
-
 #if UNITY_ANDROID
+        AndroidUpdate();
+#elif UNITY_WEBGL || UNITY_EDITOR
+        GLUpdate();
+#endif
+    }
 
+    void AndroidUpdate()
+    {
         if (!isGrabbing)
         {
             Grab();
@@ -63,7 +72,8 @@ public class GrabInteraction : MonoBehaviour
                                 throwForce += Time.deltaTime * THROW_CHARGE_SPEED;
                             }
 
-                            throwSlider.fillAmount = (throwForce - MIN_THROW_FORCE) / (MAX_THROW_FORCE - MIN_THROW_FORCE);
+                            throwSlider.fillAmount =
+                                (throwForce - MIN_THROW_FORCE) / (MAX_THROW_FORCE - MIN_THROW_FORCE);
                         }
 
                         if (Input.GetTouch(i).phase == TouchPhase.Ended)
@@ -80,20 +90,79 @@ public class GrabInteraction : MonoBehaviour
         }
     }
 
+    void GLUpdate()
+    {
+        if (!isGrabbing)
+        {
+            Grab();
+        }
+
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+
+            {
+                throwBar.SetActive(true);
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (throwForce >= MAX_THROW_FORCE)
+                {
+                    isDecreasing = true;
+                }
+
+                if (throwForce <= MIN_THROW_FORCE)
+                {
+                    isDecreasing = false;
+                }
+
+                if (isDecreasing)
+                {
+                    throwForce -= Time.deltaTime * THROW_CHARGE_SPEED;
+                }
+                else
+                {
+                    throwForce += Time.deltaTime * THROW_CHARGE_SPEED;
+                }
+
+                throwSlider.fillAmount = (throwForce - MIN_THROW_FORCE) / (MAX_THROW_FORCE - MIN_THROW_FORCE);
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+
+
+            {
+                Debug.Log(throwForce);
+                _grabbedItem.Throw(throwForce);
+                _grabbedItem = null;
+                isGrabbing = false;
+                RestThrowBar();
+            }
+        }
+    }
 
     private void RestThrowBar()
     {
+#if UNITY_ANDROID
         throwSlider.fillAmount = 0.0f;
         throwForce = MIN_THROW_FORCE;
         throwBar.SetActive(false);
+#elif UNITY_WEBGL || UNITY_EDITOR
+        throwSlider.fillAmount = 0.0f;
+        throwForce = MIN_THROW_FORCE;
+        throwBar.SetActive(false);
+        isGrabbing = false;
+#endif
     }
+
     private void Grab()
     {
+#if UNITY_ANDROID
         if (Input.touchCount > 0)
         {
             for (int i = 0; i < Input.touchCount; i++)
             {
-
                 if (Input.GetTouch(i).phase == TouchPhase.Began)
                 {
                     // Construct a ray from the current touch coordinates
@@ -116,91 +185,7 @@ public class GrabInteraction : MonoBehaviour
                 }
             }
         }
-    }
-    // RETURN TRUE IF THE TOUCH INPUT IS ON THE RIGHT SIDE OF THE SCREEN
-    private bool isRightSide(Vector2 input)
-    {
-        int r_screenResolution = Screen.width / 2;
-        return input.x >= r_screenResolution ? true : false;
-    }
-
-#endif
-
-        //WEBGL INTERACTION STARTS HERE
-
-#if UNITY_WEBGL || UNITY_EDITOR
-
-        print("Running WebGL");
-
-        if (!isGrabbing)
-        {
-            Grab();
-        }
-
-        else
-        {
-
-            if (Input.GetKeyDown(KeyCode.Space))
-
-            {
-
-                throwBar.SetActive(true);
-
-            }
-
-            if (Input.GetKey(KeyCode.Space))
-            {
-
-                if (throwForce >= MAX_THROW_FORCE)
-                {
-                    isDecreasing = true;
-                }
-
-                if (throwForce <= MIN_THROW_FORCE)
-                {
-                    isDecreasing = false;
-                }
-
-                if (isDecreasing)
-                {
-                    throwForce -= Time.deltaTime * THROW_CHARGE_SPEED;
-                }
-                else
-                {
-                    throwForce += Time.deltaTime * THROW_CHARGE_SPEED;
-                }
-
-                throwSlider.fillAmount = (throwForce - MIN_THROW_FORCE) / (MAX_THROW_FORCE - MIN_THROW_FORCE);
-
-            }
-
-            if (Input.GetKeyUp(KeyCode.Space))
-
-
-            {
-                Debug.Log(throwForce);
-                _grabbedItem.Throw(throwForce);
-                _grabbedItem = null;
-                isGrabbing = false;
-                RestThrowBar();
-            }
-        }
-    }
-
-
-    private void RestThrowBar()
-    {
-        throwSlider.fillAmount = 0.0f;
-        throwForce = MIN_THROW_FORCE;
-        throwBar.SetActive(false);
-        isGrabbing = false;
-
-    }
-    private void Grab()
-    {
-
-
-
+#elif UNITY_WEBGL || UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))
         {
             // Construct a ray from the current touch coordinates
@@ -221,11 +206,13 @@ public class GrabInteraction : MonoBehaviour
         {
             isGrabbing = true;
         }
-
-
+#endif
     }
 
-
-#endif
-
+    // RETURN TRUE IF THE TOUCH INPUT IS ON THE RIGHT SIDE OF THE SCREEN
+    private bool isRightSide(Vector2 input)
+    {
+        int r_screenResolution = Screen.width / 2;
+        return input.x >= r_screenResolution ? true : false;
+    }
 }
