@@ -38,7 +38,7 @@ public class BackgroundMusicLoop : MonoBehaviour
         if (player == null)
         {
             player = GameObject.Find("Player");
-            myAudio.volume = 0.5f;
+            myAudio.volume = .5f;
         }
         else
         {

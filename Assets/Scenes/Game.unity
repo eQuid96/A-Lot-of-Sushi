@@ -4887,6 +4887,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 538682713, guid: 70c49abaea5fecb4aafcd585d1b2793c, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2921854660233906736, guid: 70c49abaea5fecb4aafcd585d1b2793c,
         type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -15969,6 +15973,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2961556105970876512, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961556105970876512, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070485854442723824, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070485854442723824, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199312712415281439, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199312712415281439, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039870724615742001, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039870724615742001, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039870724615742001, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849356595024514356, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849356595024514356, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849356595024514356, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161266002685014547, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161266002685014547, guid: 8252d923d534e0742a9595f42db9e9cc,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7161266003535835040, guid: 8252d923d534e0742a9595f42db9e9cc,
         type: 3}
       propertyPath: m_LocalPosition.x
