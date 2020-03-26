@@ -199,7 +199,11 @@ public class GrabInteraction : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && _grabbedItem)
         {
-            isGrabbing = true;
+            if(_grabbedItem.transform.parent == sushiAnchorPos.parent)
+            {
+                isGrabbing = true;
+            }
+            
         }
 #endif
     }

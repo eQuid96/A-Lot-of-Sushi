@@ -25,8 +25,8 @@ public class ThrowableObject : MonoBehaviour
     private TrailRenderer trail;
     public GameObject popUpScore;
 
-    void Awake() 
-    
+    void Awake()
+
     {
         sounds = GameObject.Find("[Sounds Source]");
         NPC = GameObject.Find("Waitress").GetComponent<NPCController>();
@@ -63,7 +63,7 @@ public class ThrowableObject : MonoBehaviour
         trail.enabled = isThrowing;
 
         // Debug.Log(collision.transform.name);
-        Invoke("ResetPosition", 1.0f);
+
         timer += Time.deltaTime;
         if (!hasCollide && timer >= MIN_TIME_ON_COLLISION)
         {
@@ -73,7 +73,8 @@ public class ThrowableObject : MonoBehaviour
                 PlayerManager.instance.AddScore(tableScore);
                 popUpScore.SetActive(true);
                 popUpScore.GetComponent<Text>().text = ("+" + tableScore);
-                 return;
+                Invoke("ResetPosition", 0.5f);
+                return;
             }
             if (collision.transform.CompareTag("Ciotola"))
             {
@@ -81,6 +82,7 @@ public class ThrowableObject : MonoBehaviour
                 PlayerManager.instance.AddScore(ciotolaScore);
                 popUpScore.SetActive(true);
                 popUpScore.GetComponent<Text>().text = ("+" + ciotolaScore);
+                Invoke("ResetPosition", 0.5f);
                 return;
             }
             if (collision.transform.CompareTag("Tagliere"))
@@ -89,26 +91,40 @@ public class ThrowableObject : MonoBehaviour
                 PlayerManager.instance.AddScore(tagliereScore);
                 popUpScore.SetActive(true);
                 popUpScore.GetComponent<Text>().text = ("+" + tagliereScore);
+                Invoke("ResetPosition", 0.5f);
                 return;
             }
+
+            else
+            {
+                Invoke("ResetPosition", 0f);
+                return;
+            }
+
+
         }
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if(collision.transform.CompareTag("Waiter")){
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Waiter"))
+        {
             Detected();
-        }else if (collision.transform.CompareTag("Tagliere")){
+        }
+        else if (collision.transform.CompareTag("Tagliere"))
+        {
             dishSound.Play();
         }
     }
-    
-    private void OnTriggerEnter(Collider triggered) 
+
+    private void OnTriggerEnter(Collider triggered)
     {
-        if (isThrowing && triggered.transform.CompareTag("Cone")) 
+        if (isThrowing && triggered.transform.CompareTag("Cone"))
             Detected();
     }
 
-    private void Detected(){
+    private void Detected()
+    {
         ResetPosition();
         PlayerManager.instance.RemoveLife();
         NPC.DoTrigger(true);
@@ -123,7 +139,12 @@ public class ThrowableObject : MonoBehaviour
         trail.enabled = false;
         rb.isKinematic = true;
         transform.parent = startParent;
+        transform.parent = startParent;
         transform.localPosition = startPosition;
         transform.localRotation = startRotation;
+
     }
+
+   
+
 }
