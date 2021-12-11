@@ -1,7 +1,10 @@
 # A-Lot-of-Sushi
-![Logo](https://img.itch.zone/aW1nLzMxMDc5MDQucG5n/315x250%23c/T6Dzh8.png)
+[![Logo](https://img.itch.zone/aW1nLzMxMDc5MDQucG5n/315x250%23c/T6Dzh8.png)](https://cancercookie.itch.io/toomuchsushi)
 
-This game is made during the Quarantine Game Jam:
+## About
+You can play the game here: https://cancercookie.itch.io/toomuchsushi
+
+This game was made in 3 days during the Quarantine Game Jam:
 https://itch.io/jam/quarantinejam
 
 That's a lot of sushi!
